@@ -1,6 +1,7 @@
 package base58
 
 import (
+	"bytes"
 	"math/big"
 )
 
@@ -41,6 +42,14 @@ func reverse(b []byte) {
 }
 
 func Base58Decoding(str string) string {
+	byte_str := []byte(str)
+	res := big.NewInt(0)
+	// 转10进制
+	for _, b := range byte_str {
+		i := bytes.IndexByte(CHAR_58, b)
+		res.Mul(res, big.NewInt(58))
+		res.Add(res, big.NewInt(int64(i)))
+	}
 
-	return ""
+	return string(res.Bytes())
 }

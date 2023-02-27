@@ -10,6 +10,6 @@ func TestBase58Encoding(t *testing.T) {
 	fmt.Println(encoding)
 }
 func TestBase58Decoding(t *testing.T) {
-	encoding := Base58Decoding("he")
+	encoding := Base58Decoding("8wn")
 	fmt.Println(encoding)
 }
