@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 
-	"go_blockchain/pkg/util/base64"
+	"go_blockchain/pkg/util/base58"
 )
 
 func main() {
 	str := "hello golang"
-	en := base64.Base64Encoding(str)
+	en := base58.Base58Encoding(str)
 	fmt.Println(en)
-	de := base64.Base64Decoding(en)
+	de := base58.Base58Decoding(en)
 	fmt.Println(de)
 }
